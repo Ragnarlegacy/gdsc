@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    .section {
+      /* display: inline-flexbox; */
+      margin: 25px;
+      padding: 2vh;
+      font-size: 23px;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    }
+    #checkout {
+      width: 379px;
+    }
+    #ok {
+      font-size: 16px;
+    }
+    .seo {
+      float: right;
+      /* align-content: flex-start; */
+      display: inline-flexbox;
+      padding: 12px 16px;
+        
+      background-color: gray;
+      margin-top: 0px;
+    }
+    .body {
+      /* margin: 0 auto; */
+      max-width: 900px;
+      width: 90%;
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CheckOutpage</title>
+  </head>
+
+  <body>
+    <div class="section">
+      <h1>Checkout</h1>
+
+      <h2>Checkout information</h2>
+      <p id="ok">Email</p>
+      <textarea id="checkout2">Enter  your email...</textarea>
+      <p id="ok">Phone</p>
+      <textarea style="width: 379px" id="checkout">
+Enter  your phone...</textarea
+      >
+      <h2>Shipping Address</h2>
+      <p id="ok">Full name</p>
+      <textarea id="checkout">Rodney Coton</textarea>
+      <p id="ok">Address</p>
+      <textarea id="checkout1">Your address</textarea>
+      <p id="ok">City</p>
+      <textarea id="checkout">Your city..</textarea>
+      <br />
+
+      <p id="ok">Country</p>
+      <label for="country">Your country..</label>
+      <select name="country" id="country">
+        <option value="India">India</option>
+      </select>
+
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PostalCode<textarea
+        style="width: 280px; height: 16px"
+      >
+Your postal code</textarea
+      >
+      <br />
+      <br />
+      <input
+        type="checkbox" id="myCheck"name="vehicle2"/>
+      <label for="vehicle2" style="font-size: 18px"
+        >Save this inormation for next time</label
+      ><br />
+      &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+      &emsp; &emsp; &emsp;<button
+        onclick="func()"
+        style="
+          background-color: orange;
+          color: whitesmoke;
+          width: 170px;
+          height: 43px;
+          border-radius: 7px;
+        "
+      >
+        Continue
+        <script>
+         
+          function func() {
+            let p1 = document.getElementById("checkout1").value;
+            // let pp4 = document.getElementById("vehicle2").value;
+            if(!document.getElementById("myCheck").checked  && p1=="")
+                alert("Please tick yes to proceed");
+               
+             else {
+              alert("Form submitted");
+            }
+          }
+        </script>
+      </button>
+    </div>
+    <div class="seo">
+      <img src="index.jpg" />
+      <h2>Vintage Backbag</h2>
+      <p style="color: orange">
+        $54.99 &emsp;<s style="color: black">$94.99</s>
+      </p>
+      <button onclick="increment()">+</button>
+      <input id="demoInput" type="number" min="0" max="111" />
+      <button onclick="decrement()">-</button>
+      <script>
+        function increment() {
+          document.getElementById("demoInput").stepUp();
+          var l1 = document.getElementById("demoInput").value;
+          var p = 54.99 * l1;
+          var l2 = document.getElementById("demoInput1").value;
+          var p3 = 74.99 * l2;
+          var result = p3 + p + 19;
+          alert("Total: " + result);
+        }
+        function decrement() {
+          document.getElementById("demoInput").stepDown();
+          var l1 = document.getElementById("demoInput").value;
+          var p = 54.99 * l1;
+          var l2 = document.getElementById("demoInput1").value;
+          var p3 = 74.99 * l2;
+          var result = p3 + p + 19;
+          alert("Total: " + result);
+        }
+      </script>
+      <br />
+      <img src="th.jpg" />
+      <h2>Levi shoes</h2>
+      <p style="color: orange">
+        $74.99 &emsp;<s style="color: black">$124.99</s>
+      </p>
+      <button onclick="increment1()">+</button>
+      <input id="demoInput1" type="number" min="0" max="111" />
+      <button onclick="decrement1()">-</button>
+
+      <p>---------------------------------------------</p>
+      <p>Shipping $19</p>
+      <p>---------------------------------------------</p>
+      <p id="ok1">Total</p>
+      <script>
+        function increment1() {
+          document.getElementById("demoInput1").stepUp();
+          var l1 = document.getElementById("demoInput").value;
+          var p = 54.99 * l1;
+          var l2 = document.getElementById("demoInput1").value;
+          var p3 = 74.99 * l2;
+          var result = p3 + p + 19;
+          alert("Total: " + result);
+        }
+        function decrement1() {
+          document.getElementById("demoInput1").stepDown();
+          var l1 = document.getElementById("demoInput").value;
+          var p = 54.99 * l1;
+          var l2 = document.getElementById("demoInput1").value;
+          var p3 = 74.99 * l2;
+          var result = p3 + p + 19;
+          alert("Total: " + result);
+        }
+        document.getElementById("ok1").innerHTML = p3 + p;
+      </script>
+    </div>
+  </body>
+</html>
